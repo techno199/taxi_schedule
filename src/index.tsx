@@ -3,14 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { LocalizationProvider } from '@material-ui/lab';
-import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
+import 'moment/locale/ru';
+import { configureStore } from '@reduxjs/toolkit';
+import { rootReducer } from './redux/root-reducer';
+import { Provider } from 'react-redux'
+
+const store = configureStore({
+  reducer: rootReducer
+});
+
+export type IAppDispatch = typeof store.dispatch;
 
 ReactDOM.render(
   <React.StrictMode>
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <Provider store={store}>
       <App />
-    </LocalizationProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

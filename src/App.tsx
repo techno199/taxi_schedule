@@ -8,10 +8,10 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    height: 500,
     width: '100%',
     boxSizing: 'border-box',
-    padding: 20
+    padding: 20,
+    minWidth: 780
   }
 }))
 

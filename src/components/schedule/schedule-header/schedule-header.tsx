@@ -1,6 +1,6 @@
-import { Button, makeStyles } from '@material-ui/core';
+import { Box, Button, makeStyles } from '@material-ui/core';
 import React from 'react'
-import ScheduleDatepicker from '../_common/schedule-datepicker/schedule-datepicker';
+import ScheduleDatepicker from '../schedule-datepicker/schedule-datepicker';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -9,21 +9,27 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     fontSize: 20,
-    fontWeight: 600
+    fontWeight: 600,
+    marginRight: 10
   },
-  rentBtn: {
-    marginLeft: 10
-  }
 }));
 
-export default function ScheduleHeader() {
+export type IScheduleHeaderProps = {
+  date: moment.Moment;
+  onDateChange?: (newDate: moment.Moment) => any;
+}
+
+export default function ScheduleHeader(props: IScheduleHeaderProps) {
   const classes = useStyles();
+  const { date, onDateChange } = props;
 
   return (
     <div className={classes.root}>
       <span className={classes.title}>Календарь списаний</span>
-      <Button className={classes.rentBtn} variant='contained' color='secondary'>Списать аренду</Button>
-      <ScheduleDatepicker />
+      <Button variant='contained' color='secondary'>Списать аренду</Button>
+      <Box marginLeft='auto'>
+        <ScheduleDatepicker date={date} onDateChange={onDateChange} />
+      </Box>
     </div>
   )
 }
