@@ -1,8 +1,6 @@
-import { Box, makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
-import MaterialTable, { Column, Options } from 'material-table'
+import { makeStyles, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import React from 'react'
-import { IDateRange } from '../../../types/date-range';
-import { IDriver, ITableResponse, IVehicle } from '../../../types/table-data';
+import { ITableResponse, IVehicle } from '../../../types/table-data';
 import ScheduleDriverCell from './schedule-driver-cell/schedule-driver-cell';
 import moment from 'moment';
 import { IScheduleBodyContainerProps } from './schedule-body-container';
