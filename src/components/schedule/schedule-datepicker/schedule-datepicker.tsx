@@ -11,11 +11,15 @@ export type IScheduleDatepickerProps = {
 
 const useStyles = makeStyles(theme => ({
   root: {
+    display: 'flex',
+    flexWrap: 'nowrap',
     background: theme.palette.grey[300],
     borderRadius: 4
   },
   dateString: {
-    display: 'inline-block',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     width: 120,
     textAlign: 'center',
     cursor: 'default',

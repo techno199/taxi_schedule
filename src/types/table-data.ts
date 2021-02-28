@@ -1,6 +1,9 @@
+import { IStatus } from "./status"
+
 export type ITableResponse = {
   vehicles: IVehicle[];
   drivers: IDriver[];
+  statuses: IStatus[];
   scheduleScheme: IScheduleScheme[];
 }
 

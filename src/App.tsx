@@ -11,7 +11,10 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     boxSizing: 'border-box',
     padding: 20,
-    minWidth: 780
+    maxWidth: 1200,
+    [theme.breakpoints.down('md')]: {
+      fontSize: 12
+    }
   }
 }))
 

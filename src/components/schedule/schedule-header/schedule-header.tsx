@@ -5,13 +5,29 @@ import ScheduleDatepicker from '../schedule-datepicker/schedule-datepicker';
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      flexFlow: 'column'
+    }
   },
   title: {
     fontSize: 20,
     fontWeight: 600,
-    marginRight: 10
+    marginRight: 10,
+    [theme.breakpoints.down('md')]: {
+      fontSize: 14
+    }
   },
+  button: {
+    fontSize: 'inherit !important'
+  },
+  selector: {
+    marginLeft: 'auto',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: 'unset',
+      marginTop: 32
+    }
+  }
 }));
 
 export type IScheduleHeaderProps = {
@@ -25,11 +41,14 @@ export default function ScheduleHeader(props: IScheduleHeaderProps) {
 
   return (
     <div className={classes.root}>
-      <span className={classes.title}>Календарь списаний</span>
-      <Button variant='contained' color='secondary'>Списать аренду</Button>
-      <Box marginLeft='auto'>
+      <div>
+        <span className={classes.title}>Календарь списаний</span>
+        <Button className={classes.button} variant='contained' color='secondary'>Списать аренду</Button>
+      </div>
+      
+      <div className={classes.selector}>
         <ScheduleDatepicker date={date} onDateChange={onDateChange} />
-      </Box>
+      </div>
     </div>
   )
 }

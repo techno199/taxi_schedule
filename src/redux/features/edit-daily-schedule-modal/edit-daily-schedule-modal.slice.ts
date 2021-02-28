@@ -4,10 +4,10 @@ import { IDriver } from "../../../types/table-data";
 
 export type IEditDailyScheduleModalState = {
   open: boolean;
+  selectedDate?: string;
+  selectedVehicleId?: number;
   selectedDriverId?: number;
-  driverOptions?: IDriver[];
   selectedStatusId?: number;
-  statusOptions?: IStatus[];
 }
 
 const initialState: IEditDailyScheduleModalState = {
