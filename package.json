@@ -1,6 +1,6 @@
 {
   "name": "taxi_schedule",
-  "homepage": "./",
+  "homepage": "/public/assets/react/schedule_app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
